@@ -11,8 +11,8 @@ namespace Exercise_10
         static void Main(string[] args)
         {
             VehicleData VD = new VehicleData();
-            Car Volvo = new Car("Bil: Volvo");
-            Boat Segelbåt = new Boat("Båt: Motordriven segelbåt", 3);
+            Car Volvo = new Car();
+            Boat Segelbåt = new Boat(3);
             VD.PrintVehicle(Volvo);
             VD.PrintVehicle(Segelbåt);
             Console.ReadKey();

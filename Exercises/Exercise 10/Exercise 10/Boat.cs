@@ -18,9 +18,8 @@ namespace Exercise_10
             }
         
 
-        public Boat(string vehicleType, int nrOfSails): base (vehicleType)
+        public Boat(int nrOfSails): base ("Boat")
         {
-            this._VehicleType = vehicleType;
         }
         public void StartEngine()
         {

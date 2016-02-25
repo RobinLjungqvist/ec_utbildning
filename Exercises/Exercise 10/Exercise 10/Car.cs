@@ -9,9 +9,8 @@ namespace Exercise_10
     class Car : Vehicle
     {
         private bool engineIsRunning = false;
-        public Car(string vehicleType): base (vehicleType)
+        public Car(): base ("Car")
         {
-            this._VehicleType = vehicleType;
         }
         public void StartEngine()
         {
