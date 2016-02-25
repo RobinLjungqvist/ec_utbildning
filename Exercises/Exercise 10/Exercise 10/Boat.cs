@@ -20,6 +20,7 @@ namespace Exercise_10
 
         public Boat(int nrOfSails): base ("Boat")
         {
+            this._nrOfSails = nrOfSails;
         }
         public void StartEngine()
         {
