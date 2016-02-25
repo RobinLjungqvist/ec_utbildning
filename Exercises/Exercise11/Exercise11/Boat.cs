@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exercise11
 {
-    class Boat: Vehicle
+    class Boat: MotorVehicle
     {
-        private bool _engineIsRunning = false;
         private int _nrOfSails = 0;
 
         public int _NrOfSails
@@ -22,17 +21,10 @@ namespace Exercise11
         {
             this._nrOfSails = nrOfSails;
         }
-        public void StartEngine()
-        {
-            this._engineIsRunning = true;
-        }
-        public void StopEngine()
-        {
-            this._engineIsRunning = false;
-        }
+
         public override string DescribeVehicle()
         {
-            return _VehicleType + $" and it has {_nrOfSails} sails. Is the engine running: {_engineIsRunning}";
+            return _VehicleType + $" and it has {_nrOfSails} sails. The engine is {isTheEngineRunning()}";
         }
     }
 }
