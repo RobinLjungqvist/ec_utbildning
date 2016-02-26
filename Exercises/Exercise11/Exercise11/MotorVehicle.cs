@@ -21,16 +21,9 @@ namespace Exercise11
         {
             _engineIsRunning = false;
         }
-        public string isTheEngineRunning()
+        public bool isTheEngineRunning()
         {
-            if (_engineIsRunning)
-            {
-                return "running";
-            }
-            else
-            {
-                return "not running.";
-            }
+            return _engineIsRunning;
         }
     }
 }

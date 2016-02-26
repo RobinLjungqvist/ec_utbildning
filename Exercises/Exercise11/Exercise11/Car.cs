@@ -15,7 +15,7 @@ namespace Exercise11
          
         public override string DescribeVehicle()
         {
-            return base.DescribeVehicle() + $" The engine is {isTheEngineRunning()}";
+            return base.DescribeVehicle() +  (isTheEngineRunning() ? "It's running!":" It's not running");
         }
     }
 }

@@ -13,8 +13,22 @@ namespace Exercise11
             VehicleData VD = new VehicleData();
             Car Volvo = new Car();
             Boat Segelbåt = new Boat(nrOfSails: 4);
-            VD.PrintVehicle(Volvo);
-            VD.PrintVehicle(Segelbåt);
+            var list = new List<Vehicle>();
+            list.Add(Volvo);
+            list.Add(Segelbåt);
+            foreach (var item in list)
+            {
+                if (item is Car)
+                {
+                    var myCar = (Car)item;
+                    VD.PrintVehicle(myCar);
+                }
+                if (item is Boat)
+                {
+                    var myBoat = (Boat)item;
+                    VD.PrintVehicle(myBoat);
+                }
+            }
             Console.ReadKey();
         }
     }

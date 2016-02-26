@@ -24,7 +24,7 @@ namespace Exercise11
 
         public override string DescribeVehicle()
         {
-            return _VehicleType + $" and it has {_nrOfSails} sails. The engine is {isTheEngineRunning()}";
+            return base.DescribeVehicle() + (isTheEngineRunning() ? " It's running!" : " It's not running");
         }
     }
 }
