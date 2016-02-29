@@ -11,7 +11,7 @@ namespace Exercise_12
         static void Main(string[] args)
         {
             var logger = new DateTimeLogger();
-            var application = new LogApplication(logger);
+            var application = new LogApplication(logger); //Tar emot implementationer av ILogger.
             application.Run();
         }
     }
