@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Test
 {
@@ -10,28 +11,32 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("< table >");
-            for (int i = 1; i <= 10; i++)
+            
+            Console.SetBufferSize(109, 25);
+            Console.SetWindowSize(110, 26);
+            Rectangle rekt = new Rectangle(45, 15, 10, 10);
+            Rectangle rekt2 = new Rectangle(75, 17, 2, 2);
+            Dot dot = new Dot(108,25);
+            HorizontalLine hL = new HorizontalLine(19, 23, 20);
+            VerticalLine vL = new VerticalLine(80,10,5);
+            ShapeControl ShapeController = new ShapeControl();
+            ShapeController.AddShape(rekt);
+            ShapeController.AddShape(rekt2);
+            ShapeController.AddShape(dot);
+            ShapeController.AddShape(hL);
+            ShapeController.AddShape(vL);
+
+            do
             {
-                if (i % 2 != 0)
-                {
-                    sb.AppendLine("     <tr bgcolor=\"#CCCCCC\">"); 
-                }
-                else
-                {
-                    sb.AppendLine("     </tr>");
-                }
-                sb.AppendLine(string.Format("         <td>Row{0}</td>", i));
-                for (int j = 0; j < 9; j++)
-                {
-                    sb.AppendLine("         <td>xxxxx<td>"); 
-                }
-                sb.AppendLine("     </tr>");
-            }
-            sb.AppendLine("< /table >");
-            Console.WriteLine(sb.ToString());
-            Console.ReadKey();
+                Console.Clear();
+                
+                ShapeController.PrintShapes();
+                ShapeController.MoveShapes();
+                Console.ReadKey();
+
+            } while (true);
+
+
         }
     }
 }
