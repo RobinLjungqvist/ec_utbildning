@@ -14,6 +14,9 @@ namespace Exercise13
             var person1 = BM.CreatePerson();
             BM.PrintBirthdayInfo(person1);
             Console.ReadKey();
+            Console.Clear();
+            BM.stretchTask(person1);
+            Console.ReadKey();
         }
     }
 }
