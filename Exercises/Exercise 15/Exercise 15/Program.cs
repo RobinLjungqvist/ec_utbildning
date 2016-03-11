@@ -14,7 +14,7 @@ namespace Exercise_15
             var Altereration = new Alterations();
             var input = "Hello World!";
 
-            var dict = Altereration.StringToCharDictionary(input, OnlyLetters: false);
+            var dict = Altereration.StringToCharDictionary(input);
             Print.PrintDictionary(dict);
 
             Console.WriteLine("---------------------------------");
@@ -35,7 +35,7 @@ namespace Exercise_15
     }
     public class Alterations
     {
-        public Dictionary<char,int> StringToCharDictionary(string input, bool OnlyLetters)
+        public Dictionary<char,int> StringToCharDictionary(string input, bool OnlyLetters = false)
         {
             var dict = new Dictionary<char, int>();
 
