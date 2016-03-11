@@ -14,13 +14,12 @@ namespace Exercise_15
             var Altereration = new Alterations();
             var input = "Hello World!";
 
-            var dict = Altereration.StringToCharDictionary(input);
+            var dict = Altereration.StringToCharDictionary(input, OnlyLetters: false);
             Print.PrintDictionary(dict);
 
             Console.WriteLine("---------------------------------");
 
-            var newInput = Altereration.RemoveSymbolsThatIsntLetters(input);
-            var newDict = Altereration.StringToCharDictionary(newInput);
+            var newDict = Altereration.StringToCharDictionary(input, OnlyLetters: true);
             Print.PrintDictionary(newDict);
 
             Console.WriteLine("---------------------------------");
@@ -36,9 +35,14 @@ namespace Exercise_15
     }
     public class Alterations
     {
-        public Dictionary<char,int> StringToCharDictionary(string input)
+        public Dictionary<char,int> StringToCharDictionary(string input, bool OnlyLetters)
         {
             var dict = new Dictionary<char, int>();
+
+            if (OnlyLetters)
+            {
+                input = RemoveSymbolsThatIsntLetters(input);
+            }
 
             foreach (var character in input)
             {
@@ -77,7 +81,7 @@ namespace Exercise_15
             return dict;
         }
 
-        public string RemoveSymbolsThatIsntLetters(string input)
+        private string RemoveSymbolsThatIsntLetters(string input)
         {
             string temp = string.Empty;
             foreach (var item in input)
