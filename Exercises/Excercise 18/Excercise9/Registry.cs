@@ -13,21 +13,24 @@ namespace Exercise_18
 
         public void AddEmployeeToRegistry()
         {
-
-            Console.Write("Please enter employee first name: ");
-            string firstName = Console.ReadLine();
-
-            Console.Write("Please enter employee last name: ");
-            string lastName = Console.ReadLine();
-
-            Console.Write("Please enter employee Social Security Number(YYMMDDXXXX): ");
-            string socNR = validateSocNR();
-
-            Console.Write("Please enter employee hourly wage: ");
-            int hourlyWage;
-            string wage = Console.ReadLine();
             try
             {
+                Console.Write("Please enter employee first name: ");
+                string firstName = Console.ReadLine();
+                ValidateNameInput(firstName);
+
+                Console.Write("Please enter employee last name: ");
+                string lastName = Console.ReadLine();
+                ValidateNameInput(lastName);
+
+                Console.Write("Please enter employee Social Security Number(YYMMDDXXXX): ");
+                string socNR = validateSocNR();
+
+                Console.Write("Please enter employee hourly wage: ");
+                int hourlyWage;
+
+                string wage = Console.ReadLine();
+
                 hourlyWage = int.Parse(wage);
 
 
@@ -50,6 +53,10 @@ namespace Exercise_18
             {
                 Console.WriteLine(ex.Message);
                 return;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
 
@@ -142,16 +149,27 @@ namespace Exercise_18
                 }
                 else
                 {
-                    Console.WriteLine("Your Social security number must be 10 digits.");
-                    return validateSocNR();
+                    throw new ArgumentException("Your Social security number must be 10 digits.");
+
                 }
+
             }
             else
             {
-                Console.WriteLine("Your Social security number must be digits.");
-                return validateSocNR();
+                throw new ArgumentException("Your Social security number must be digits.");
             }
             return string.Empty;
+        }
+        public string ValidateNameInput(string input)
+        {
+            foreach (var character in input)
+            {
+                if(!char.IsLetter(character))
+                {
+                    throw new FormatException("Input can only be letters.");
+                }
+            }
+            return input;
         }
 
     }
