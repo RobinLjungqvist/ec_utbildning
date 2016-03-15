@@ -37,7 +37,9 @@ namespace Exercise_23A_and_B
             coord2._x = 0;
             coord2._y = 4;
 
-            Coordinate? coordinate2 = null;
+            Coordinate? coordinate2 = coord2;
+            //Coordinate? coordinate2 = null; 
+            // for testing.
 
             Coordinate coord3;
             coord3._x = 0;
@@ -45,20 +47,21 @@ namespace Exercise_23A_and_B
 
             Coordinate? coordinate3 = coord3;
 
+            Triangle myTri = null;
             if (coordinate1.HasValue && coordinate2.HasValue && coordinate3.HasValue)
                 {
-                    var myTriangle = new Triangle(coordinate1.Value, coordinate2.Value, coordinate3.Value);
+                    myTri = new Triangle(coordinate1.Value, coordinate2.Value, coordinate3.Value);
 
-                    foreach (var coord in myTriangle.triangleCoordinates)
-                    {
-                        Console.WriteLine($"{coord._x}, {coord._y}");
-                    } 
                 }
             else
             {
                 Console.WriteLine("One of the input coordinates had no value");
             }
+            if(myTri != null)
+            {
+                myTri.printTriangle();
 
+            }
             Console.ReadKey();
 
         }

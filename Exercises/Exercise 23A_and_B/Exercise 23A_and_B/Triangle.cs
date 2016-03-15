@@ -19,5 +19,13 @@ namespace Exercise_23A_and_B
                 three
             };
         }
+
+        public void printTriangle()
+        {
+            foreach (var coord in triangleCoordinates)
+            {
+                Console.WriteLine($"{coord._x}, {coord._y}");
+            }
+        }
     }
 }
