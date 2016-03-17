@@ -7,19 +7,18 @@ using System.Threading.Tasks;
 
 namespace Exercise_21
 {
-    class ListLoader
+    public class ListLoader
     {
-        List<LanguageData> ListOfLanguages;
+        public List<LanguageData> ListOfLanguages;
 
         public ListLoader()
         {
-            ListOfLanguages = new List<LanguageData>();
-            Load();
+            ListOfLanguages = LoadLanguageData();
         }
 
-        private void Load()
+        private List<LanguageData> LoadLanguageData()
         {
-
+            var templist = new List<LanguageData>();
             var reader = new StreamReader(@"LData.txt");
 
             string line;
@@ -29,12 +28,14 @@ namespace Exercise_21
 
                 var tempLD = new LanguageData(input[0], int.Parse(input[1]), input[2]);
 
-                ListOfLanguages.Add(tempLD);
+                templist.Add(tempLD);
 
 
             }
 
             reader.Close();
+
+            return templist;
 
 
         }
@@ -51,7 +52,24 @@ namespace Exercise_21
 
             }
             List<LanguageData> SortedByYear = tempLanguageDataList.OrderBy(languagedata => languagedata._Year).ToList();
+            SaveSearchResult(SortedByYear);
             return SortedByYear;
+        }
+        private void SaveSearchResult(List<LanguageData> result)
+        {
+            var writer = new StreamWriter("SearchResult.txt");
+            foreach (var DataObject in result)
+            {
+                writer.WriteLine("{0}\t{1}\t{2}", DataObject._Name, DataObject._Year, DataObject._Description);
+                
+            }
+            writer.Close();
+
+        }
+
+        public List<LanguageData> GetListByYear()
+        {
+            return ListOfLanguages.OrderBy(x => x._Year).ToList();
         }
 
 

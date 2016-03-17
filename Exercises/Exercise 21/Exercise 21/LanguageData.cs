@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise_21
 {
-    class LanguageData
+    public class LanguageData
     {
         public string _Name { get; }
         public int _Year { get; }
