@@ -45,7 +45,7 @@ namespace Exercise_21
 
             foreach (var Language in ListOfLanguages)
             {
-                if (Language._Year > min && Language._Year < max)
+                if (Language._Year >= min && Language._Year <= max)
                 {
                     tempLanguageDataList.Add(Language);
                 }

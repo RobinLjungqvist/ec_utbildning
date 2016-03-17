@@ -36,7 +36,7 @@ namespace WinformsGUI
 
         private void _btnNext_Click(object sender, EventArgs e)
         {
-            if (currentpost < LanguageList.Count)
+            if (currentpost < LanguageList.Count - 1)
             {
                 currentpost++;
                 ChangeLanguage(currentpost);
