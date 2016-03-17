@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Name = new System.Windows.Forms.Label();
+            this._Name = new System.Windows.Forms.Label();
             this._txtBoxName = new System.Windows.Forms.TextBox();
             this._txtBoxYear = new System.Windows.Forms.TextBox();
             this.Year = new System.Windows.Forms.Label();
@@ -41,16 +41,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this._btnSearch = new System.Windows.Forms.Button();
+            this._btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Name
             // 
-            this.Name.AutoSize = true;
-            this.Name.Location = new System.Drawing.Point(12, 9);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(35, 13);
-            this.Name.TabIndex = 0;
-            this.Name.Text = "Name";
+            this._Name.AutoSize = true;
+            this._Name.Location = new System.Drawing.Point(12, 9);
+            this._Name.Name = "Name";
+            this._Name.Size = new System.Drawing.Size(35, 13);
+            this._Name.TabIndex = 0;
+            this._Name.Text = "Name";
             // 
             // _txtBoxName
             // 
@@ -159,11 +160,22 @@
             this._btnSearch.UseVisualStyleBackColor = true;
             this._btnSearch.Click += new System.EventHandler(this._btnSearch_Click);
             // 
+            // _btnReset
+            // 
+            this._btnReset.Location = new System.Drawing.Point(279, 28);
+            this._btnReset.Name = "_btnReset";
+            this._btnReset.Size = new System.Drawing.Size(75, 23);
+            this._btnReset.TabIndex = 13;
+            this._btnReset.Text = "Reset";
+            this._btnReset.UseVisualStyleBackColor = true;
+            this._btnReset.Click += new System.EventHandler(this._btnReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 316);
+            this.Controls.Add(this._btnReset);
             this.Controls.Add(this._btnSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -176,7 +188,8 @@
             this.Controls.Add(this.Year);
             this.Controls.Add(this._txtBoxYear);
             this.Controls.Add(this._txtBoxName);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this._Name);
+            this.Name = "";
             this.Text = "Programming Languages";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,7 +198,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label _Name;
         private System.Windows.Forms.Label Year;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _txtBoxDesc;
@@ -198,6 +211,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button _btnSearch;
+        private System.Windows.Forms.Button _btnReset;
     }
 }
 

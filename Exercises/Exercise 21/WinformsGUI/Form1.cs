@@ -31,15 +31,32 @@ namespace WinformsGUI
             {
                 currentpost--;
                 ChangeLanguage(currentpost);
+                if (currentpost == 0)
+                {
+                    _btnBack.Enabled = false;
+                }
+                else if (currentpost < LanguageList.Count)
+                {
+                    _btnNext.Enabled = true;
+                }
             }
         }
 
         private void _btnNext_Click(object sender, EventArgs e)
         {
+            if (currentpost == LanguageList.Count - 1)
+            {
+                _btnNext.Enabled = false;
+            }
             if (currentpost < LanguageList.Count - 1)
             {
                 currentpost++;
                 ChangeLanguage(currentpost);
+
+                if (currentpost > 0)
+                {
+                    _btnBack.Enabled = true;
+                }
             }
         }
 
@@ -51,9 +68,16 @@ namespace WinformsGUI
         }
         private void InitializePosts()
         {
+            currentpost = 0;
+            _btnBack.Enabled = false;
             _txtBoxName.Text = LanguageList.ElementAt(0)._Name;
             _txtBoxYear.Text = LanguageList.ElementAt(0)._Year.ToString();
             _txtBoxDesc.Text = LanguageList.ElementAt(0)._Description;
+        }
+        private void Reset()
+        {
+            LanguageList = loader.GetListByYear();
+            InitializePosts();
         }
 
         private void _btnSearch_Click(object sender, EventArgs e)
@@ -66,6 +90,11 @@ namespace WinformsGUI
                 InitializePosts();
 
             }
+        }
+
+        private void _btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
