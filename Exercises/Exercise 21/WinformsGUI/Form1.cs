@@ -86,8 +86,17 @@ namespace WinformsGUI
             int toYear;
             if(int.TryParse(_txtBoxMin.Text, out fromYear) && int.TryParse(_txtBoxMax.Text, out toYear))
             {
-                LanguageList = loader.search(fromYear, toYear);
-                InitializePosts();
+                if (fromYear < toYear)
+                {
+                    LanguageList = loader.search(fromYear, toYear);
+                    InitializePosts();
+                }
+                else
+                {
+                    _txtBoxName.Clear();
+                    _txtBoxYear.Clear();
+                    _txtBoxDesc.Text = "Search Yielded no results because the start year was lesser than the end year.";
+                }
 
             }
         }
