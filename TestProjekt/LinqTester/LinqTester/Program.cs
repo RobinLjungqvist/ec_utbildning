@@ -13,11 +13,19 @@ namespace LinqTester
             var listofints = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             var evenNumbers = listofints.Where(x => (x % 2) == 0).ToList();
+            var oddNumbers = listofints.Where(x => (x % 2) == 1).ToList();
+            var decscendingInts = listofints.OrderByDescending(x => x).ToList();
 
-            foreach (var even in evenNumbers)
-            {
-                Console.WriteLine(even);
-            }
+            Console.WriteLine("Even Numbers: ");
+            evenNumbers.ForEach(x => Console.Write(x + " "));
+
+            Console.WriteLine("\nOdd Numbers: ");
+            oddNumbers.ForEach(x => Console.Write(x + " "));
+
+
+            Console.WriteLine("\nDescending integers");
+            decscendingInts.ForEach(x => Console.Write(x + " "));
+             
             Console.ReadKey();
         }
     }

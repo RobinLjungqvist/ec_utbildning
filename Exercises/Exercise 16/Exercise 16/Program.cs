@@ -13,7 +13,7 @@ namespace Exercise_16
         static void Main(string[] args)
         {
             Stopwatch sw = new Stopwatch();
-            int numberOfTimes = 10000000;
+            int numberOfTimes = 30000000;
             var arrayList = new ArrayList();
 
             sw.Start();
@@ -44,15 +44,7 @@ namespace Exercise_16
             sw.Stop();
             Console.WriteLine("Array of ints: " + sw.ElapsedMilliseconds + "milliseconds");
 
-            sw.Reset();
-            sw.Start();
-            var DictionaryOfInts = new Dictionary<int, int>();
-            for (int i = 0; i < numberOfTimes; i++)
-            {
-                DictionaryOfInts[i] = i;
-            }
-            sw.Stop();
-            Console.WriteLine("Dictionary | Key: int| Value: int |: " + sw.ElapsedMilliseconds + "milliseconds");
+           
 
             Console.ReadKey();
 
