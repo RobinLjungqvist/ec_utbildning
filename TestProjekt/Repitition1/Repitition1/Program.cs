@@ -28,10 +28,10 @@ namespace Repitition1
                 {
                     int nrToPrint = i * j;
 
-                    table += nrToPrint + " \t";
+                    table += string.Format("{0, 3}", nrToPrint);
                     
                 }
-                Console.WriteLine(table);
+                Console.WriteLine(table.TrimStart());
             }
         }
 
