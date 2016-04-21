@@ -16,13 +16,12 @@ namespace reptition5
 
                 if (i < 16)
                 {
-                    Console.Write(0 + i.ToString("X") + " ");
+                    Console.Write(0 + i.ToString("x") + " ");
                 }
                 else
                 {
-                    Console.Write(i.ToString("X") + " ");
+                    Console.Write(i.ToString("x") + " ");
 
-                }
                 if ((i % 15) == 0)
                 {
                     Console.Write("\n");
