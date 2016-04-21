@@ -12,5 +12,17 @@ namespace Övning6
         public string City { get; set; }
         public string Country { get; set; }
         public int Age { get; set; } 
+
+        public User(string name, string city, string country, int age)
+        {
+            this.Name = name;
+            this.City = city;
+            this.Country = country;
+            this.Age = age;
+        }
+        public User()
+        {
+
+        }
     }
 }
