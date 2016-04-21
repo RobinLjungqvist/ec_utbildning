@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47CF4FB6-9D30-474D-9527-32ED1ECA891F}</ProjectGuid>
+    <ProjectGuid>{4AF3A742-2F9C-42A3-B89E-01F2F03E0E0F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>Test</AssemblyName>
+    <RootNamespace>CodeFromClassDiagram</RootNamespace>
+    <AssemblyName>CodeFromClassDiagram</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dot.cs" />
-    <Compile Include="HorizontalLine.cs" />
+    <Compile Include="IPersonRegistry.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonRegistry.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="ShapeControl.cs" />
-    <Compile Include="Shapes.cs" />
-    <Compile Include="VerticalLine.cs" />
+    <Compile Include="RegistryApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

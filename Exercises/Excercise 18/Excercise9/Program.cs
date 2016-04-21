@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise_12
+namespace Exercise_18
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var logger = new DateTimeLogger();
-            var application = new LogApplication(logger); //Tar emot implementationer av ILogger.
-            application.Run();
+            FrontEnd UI = new FrontEnd();
+            UI.Menu();
         }
     }
 }
